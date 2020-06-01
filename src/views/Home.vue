@@ -1,5 +1,5 @@
 <template>
-  <div id='app'>
+  <div id='app' class="container main-container">
     <AddTodo v-on:add-todo='addTodo' />
     <Todos v-bind:todos='todos' v-on:del-todo='deleteTodo' />
   </div>
@@ -55,6 +55,9 @@ export default {
 
 body {
   line-height: 1.4;
+}
+.main-container {
+  padding-top: 15px;
 }
 
 .custom-button {

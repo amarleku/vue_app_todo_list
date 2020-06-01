@@ -12,9 +12,9 @@ export default {
   name: "TodoItem",
   props: ["todo"],
   methods: {
-      markComplete(){
-          this.todo.completed = !this.todo.completed
-      }
+    markComplete() {
+      this.todo.completed = !this.todo.completed;
+    }
   }
 };
 </script>
@@ -30,12 +30,12 @@ export default {
   text-decoration: line-through;
 }
 .delete-button {
-  background: #c0392b;
-  color: white;
+  color: #7f8c8d;
   border: none;
   padding: 5px 9px;
   border-radius: 50%;
   cursor: pointer;
   float: right;
+  font-weight: 900;
 }
 </style>
