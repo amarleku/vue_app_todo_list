@@ -30,7 +30,7 @@ export default {
   text-decoration: line-through;
 }
 .delete-button {
-  background: brown;
+  background: #c0392b;
   color: white;
   border: none;
   padding: 5px 9px;
