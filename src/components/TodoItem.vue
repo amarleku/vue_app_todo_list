@@ -1,6 +1,6 @@
 <template>
   <div class="todo-items" v-bind:class="{'complete':todo.completed}">
-    <p>
+    <p class="items">
       <input type="checkbox" v-on:change="markComplete" />
       {{todo.title}}
       <button @click="$emit('del-todo', todo.id)" class="delete-button">X</button>
@@ -37,5 +37,8 @@ export default {
   cursor: pointer;
   float: right;
   font-weight: 900;
+}
+.items{
+  font-size: 1.2rem;
 }
 </style>
