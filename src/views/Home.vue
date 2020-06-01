@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-    <AddTodo v-on:add-todo="addTodo" />
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
+  <div id='app'>
+    <AddTodo v-on:add-todo='addTodo' />
+    <Todos v-bind:todos='todos' v-on:del-todo='deleteTodo' />
   </div>
 </template>
 
 <script>
-import Todos from "../components/Todos";
-import AddTodo from "../components/AddTodo";
-import axios from "axios";
+import Todos from '../components/Todos';
+import AddTodo from '../components/AddTodo';
+import axios from 'axios';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     Todos,
 
@@ -52,11 +52,12 @@ export default {
   margin: 0;
   padding: 0;
 }
+
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   line-height: 1.4;
 }
-.btn {
+
+.custom-button {
   display: inline-block;
   border: none;
   background: darkgrey;
@@ -64,7 +65,7 @@ body {
   padding: 7px 20px;
   cursor: pointer;
 }
-.btn:hover {
+.custom-button:hover {
   background: darkslategray;
 }
 </style>
