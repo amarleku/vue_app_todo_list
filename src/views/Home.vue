@@ -1,17 +1,17 @@
 <template>
-  <div id='app' class="container main-container">
-    <AddTodo v-on:add-todo='addTodo' />
-    <Todos v-bind:todos='todos' v-on:del-todo='deleteTodo' />
+  <div id="app" class="container main-container">
+    <AddTodo v-on:add-todo="addTodo" />
+    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
   </div>
 </template>
 
 <script>
-import Todos from '../components/Todos';
-import AddTodo from '../components/AddTodo';
-import axios from 'axios';
+import Todos from "../components/Todos";
+import AddTodo from "../components/AddTodo";
+import axios from "axios";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     Todos,
 
@@ -24,26 +24,28 @@ export default {
   },
   methods: {
     deleteTodo(id) {
-      axios.delete('https://jsonplaceholder.typicode.com/todos')
+      axios.delete("https://jsonplaceholder.typicode.com/todos");
       this.todos = this.todos.filter(todo => todo.id !== id);
     },
-    AddTodo(newTodo){
-      const {title, completed} = newTodo;
-       axios.post('https://jsonplaceholder.typicode.com/todos',{
-         title,
-         completed
-       })
-       .then(res =>this.todos = [...this.todos, res.data])
-       .catch(err => console.log(err))
+    AddTodo(newTodo) {
+      const { title, completed } = newTodo;
+      axios
+        .post("https://jsonplaceholder.typicode.com/todos", {
+          title,
+          completed
+        })
+        .then(res => (this.todos = [...this.todos, res.data]))
+        .catch(err => console.log(err));
       this.todos = [...this.todos, newTodo];
     }
   },
   created() {
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
-      .then(res => this.todos = res.data)
+    axios
+      .get("https://jsonplaceholder.typicode.com/todos?_limit=5")
+      .then(res => (this.todos = res.data))
       .catch(err => console.log(err));
   }
-}
+};
 </script>
 
 <style>
@@ -58,6 +60,11 @@ body {
 }
 .main-container {
   padding-top: 15px;
+  border: solid 1px #2c3e50;
+  padding-top: 2%;
+  margin-top: 2%;
+  box-shadow: 1px 1px 20px 0px;
+    padding-bottom: 2%;
 }
 
 .custom-button {
